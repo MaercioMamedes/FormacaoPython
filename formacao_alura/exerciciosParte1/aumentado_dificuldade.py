@@ -23,8 +23,6 @@ elif(dificuldade == 3):
     numero_secreto = randint(0,intervalo + 1)
     pontuacao = 100
 
-
-
 for rodadas in range(1,tentativas+1):
 
     print(f"Rodada {rodadas} de {tentativas}")
@@ -52,7 +50,7 @@ for rodadas in range(1,tentativas+1):
         elif(menor):
             print("Você errou ! digitou um número menor\n")
 
-    rodadas+=1
+    rodadas += 1
 
 else:
     print(f'O número correto era {numero_secreto}')
