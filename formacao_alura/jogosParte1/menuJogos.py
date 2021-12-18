@@ -1,5 +1,16 @@
 import jogoAdivinhacao
+import jogoForca
 
-escolha = int(input("Escolha o jogo:\n1-Jogo de Advinhação 2-Jogo da Velha "))
-if (escolha == 1):
-    jogoAdivinhacao.jogar()
+while True:
+    escolha = input("Escolha o jogo:\n1-Jogo de Advinhação 2-Jogo da forca ")
+    if (escolha == '1'):
+        jogoAdivinhacao.jogar()
+        break
+
+    elif (escolha == '2'):
+        jogoForca.jogar()
+        break
+
+    else:
+        print("OPÇÃO INVÁLIDA")
+        continue

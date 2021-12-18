@@ -9,19 +9,20 @@ def parametrosJogo(x, y, z):
 
 def escolhaNivel(dificuldade):
     if (dificuldade == 1):
-        parametrosJogo(7, 20, 500)
+        parametrosJogo(7, 20, 90)
 
     elif (dificuldade == 2):
-        parametrosJogo(5, 75, 750)
+        parametrosJogo(5, 75, 95)
 
     elif (dificuldade == 3):
-        parametrosJogo(3, 100, 1000)
+        parametrosJogo(3, 100, 100)
 
 def rodada(tentativas, pontuacao, intervalo, numero_secreto):
     for rodadas in range(1, tentativas + 1):
         print(f"Rodada {rodadas} de {tentativas}")
         numero_digitado = int(input(f"digite um número de 0 à {intervalo}: "))
-        pontuacao = pontuacao - abs(numero_secreto - numero_digitado)
+        pontos_perdidos = abs(numero_secreto - numero_digitado)
+        pontuacao -= pontos_perdidos
         acertou = numero_secreto == numero_digitado
         maior = numero_digitado > numero_secreto
         menor = numero_digitado < numero_secreto
@@ -43,6 +44,8 @@ def rodada(tentativas, pontuacao, intervalo, numero_secreto):
 
         rodadas += 1
     else:
+        if (pontuacao < 0):
+            pontuacao = 0
         print(f'O número correto era {numero_secreto}')
         print(f"Você fez {pontuacao} pontos")
         print("GAME OVER")
